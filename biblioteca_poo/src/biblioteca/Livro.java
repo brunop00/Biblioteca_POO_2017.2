@@ -1,7 +1,9 @@
 package biblioteca;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.time.LocalDate;
 
+@XStreamAlias("livro")
 public class Livro {
 	
 	private String autor;
@@ -12,9 +14,9 @@ public class Livro {
 	private String editora;
 	private String isbn;
 	
+	
 	public Livro(String autor, String titulo, String genero, LocalDate dataDePublicacao, String descricao,
 			String editora, String isbn) {
-		super();
 		this.autor = autor;
 		this.titulo = titulo;
 		this.genero = genero;
