@@ -1,4 +1,4 @@
-package usuário;
+package usuario;
 
 public class Funcionario extends Usuario{
 	

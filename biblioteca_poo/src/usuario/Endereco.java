@@ -1,6 +1,6 @@
-package usuário;
+package usuario;
 
-
+// "\\d{5}-\\d{3}" cep
 public class Endereco{
 	
 	private String rua;

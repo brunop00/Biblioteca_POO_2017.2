@@ -1,4 +1,4 @@
-package usuário;
+package usuario;
 
 public class Aluno extends Usuario{
 	
@@ -54,7 +54,6 @@ public class Aluno extends Usuario{
 		this.endereco = endereco;
 		this.matricula = matricula;
 	}
-	
 	
 	
 	

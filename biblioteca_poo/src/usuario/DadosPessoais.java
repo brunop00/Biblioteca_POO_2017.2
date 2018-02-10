@@ -1,9 +1,9 @@
-package usuário;
+package usuario;
 
 import java.time.LocalDate;
 
 public class DadosPessoais {
-	
+	// cpf [0-9]{3}\.){2}([0-9]{3}-)([0-9]{2}
 	private String cpf;
 	private String nome;
 	private String rg;
