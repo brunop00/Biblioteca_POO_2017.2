@@ -74,7 +74,7 @@ public class LeituraValidacaoDados {
 			return validaCPF();
 		}
 		String cpf = sc.nextLine();
-		if(!cpf.matches("[0-9]{3}\\.){2}([0-9]{3}-)([0-9]{2} ")) {
+		if(!cpf.matches("^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$")) {
 			System.out.println("O CPF digitado não é válido. Digite o CPF nesse formato: (nnn.nnn.nnn-nn)");
 			return validaCPF();
 		}
@@ -87,8 +87,8 @@ public class LeituraValidacaoDados {
 			return validaNome();
 		}
 		String nome = sc.nextLine();
-		if(!nome.matches("/^(?![ ])(?!.*(?:\\d|[ ]{2}|[!$%^&*()_+|~=\\{\\}\\[\\]:\";<>?,\\/]))(?:(?:e|da|do|das|dos|de|d'|D'|la|las|el|los|l')\\s*?|(?:[A-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð'][^\\s]*\\s*?)(?!.*[ ]$))+$/")){
-			System.out.println("Por favor digite com atenção o nome completo. Atente para os espaçoes e caracteres especiais.");
+		if(!nome.matches("^(?![ ])(?!.*(?:\\d|[ ]{2}|[!$%^&*()_+|~=\\{\\}\\[\\]:\";<>?,\\/]))(?:(?:e|da|do|das|dos|de|d'|D'|la|las|el|los|l')\\s*?|(?:[A-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð'][^\\s]*\\s*?)(?!.*[ ]$))+$")){
+			System.out.println("Por favor digite com atenção o nome completo. Atente para os espaços e caracteres especiais.");
 			return validaNome();
 		}
 		return nome;
@@ -101,10 +101,6 @@ public class LeituraValidacaoDados {
 			return validaRG();
 		}
 		String rg = sc.nextLine();
-		if(!rg.matches("/^[0-9]{2,3}\\.?[0-9]{2,3}\\.?[0-9]{3}\\-?[A-Za-z0-9]{1}$/")) {
-			System.out.println("Não é um formato de RG aceito.");
-			return validaRG();
-		}
 		return rg;
 	}
 	
@@ -115,7 +111,7 @@ public class LeituraValidacaoDados {
 			return validaTelefone();
 	}
 		String tel = sc.nextLine();
-		if(!tel.matches("^\\([1-9]{2}\\) [2-9][0-9]{3,4}\\-[0-9]{4}")){
+		if(!tel.matches("^(\\([1-9]{2}\\) [9][0-9]{4}-[0-9]{4})|(\\(1[2-9]\\) [5-9][0-9]{3}-[0-9]{4})|(\\([2-9][1-9]\\) [1-9][0-9]{3}-[0-9]{4})$")){
 			System.out.println("Formato de telefone esperado: nn nnnn-nnnn ou nn nnnnn-nnnn.");
 			return validaTelefone();
 		}
@@ -144,7 +140,7 @@ public class LeituraValidacaoDados {
 		}
 		String data = sc.nextLine();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		if(!data.matches("^([0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$")) {
+		if(!data.matches("^([0-9]{2}\\/[0-1][0-9]\\/[0-9]{4})$")) {
 			System.out.println("Digite uma data nesse formato: dd/mm/aaaa");
 			return validaDataNascimento();
 		}
@@ -157,7 +153,7 @@ public class LeituraValidacaoDados {
 			return validaRuaNum();
 		}
 		String rua=sc.nextLine();
-		if(!rua.matches("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)")) {
+		if(!rua.matches("^\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+\\s[a-zA-Z])$")) {
 			System.out.println("Por favor, informe um endereço de rua que inicie com o número da residência seguido do nome da rua. Ex: 144 josé das dores.");
 			return validaRuaNum();
 		}

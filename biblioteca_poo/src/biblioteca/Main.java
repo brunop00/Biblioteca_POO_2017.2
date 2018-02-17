@@ -24,7 +24,7 @@ public class Main {
 		String cpf = le.validaCPF();
 		System.out.println("Digite o nome completo do usuário:");
 		String nome = le.validaNome();
-		System.out.println("Digite o número do RG:");
+		System.out.println("Digite o número do RG com pontos seguido de emissor e UF, exemplo: X.XXX.XXX SSP/PB.");
 		String rg = le.validaRG();
 		System.out.println("Digite o número de telefone: (xx xxxx-xxxx ou xx xxxxx-xxxx)");
 		String tel = le.validaTelefone();
